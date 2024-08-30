@@ -28,6 +28,14 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        esc_ctrl: esc_ctrl {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ESC_CTRL";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp LCTRL>;
+            mods = <(MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_LCTL)>;
+        };
     };
 
     macros {
@@ -43,6 +51,7 @@
 &kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &none      &kp BACKSPACE     &kp LALT      &kp LGUI   &kp RIGHT_ALT      &none      &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                                &kp HOME      &kp PG_UP                                &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
 &mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp ENTER  &kp LEFT_CONTROL  &kp END       &kp PG_DN  &kp RIGHT_COMMAND  &kp SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &mo 2
+            &esc_ctrl
             >;
         };
 
